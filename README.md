@@ -2,4 +2,4 @@
 适用于解决边界网络代理场景，帮助低权限网络应用可以通过单向访问（高权限网络环境可以访问低权限网络环境，低权限网络不能访问高权限网络）通道请求高权限网络环境的资源服务。
 
 # 适应场景结构
-![image](docs/images\architecture.png)
+![image](docs/images/architecture.png)
