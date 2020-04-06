@@ -60,7 +60,7 @@ public class NettyAgentServer implements AgentServer {
 							ch.pipeline().addLast(new HttpResponseEncoder());
 							// server端接收到的是httpRequest，所以要使用HttpRequestDecoder进行解码
 							ch.pipeline().addLast(new HttpRequestDecoder());
-
+							// 接收完整的request请求体
 							ch.pipeline().addLast(new HttpObjectAggregator(65536));
 							//rest请求代理处理
 							ch.pipeline().addLast(new HttpServletHandler(restBroker));

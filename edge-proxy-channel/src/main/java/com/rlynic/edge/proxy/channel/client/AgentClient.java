@@ -5,9 +5,8 @@
  */
 package com.rlynic.edge.proxy.channel.client;
 
-import org.springframework.cloud.netflix.feign.FeignClient;
-
 import com.rlynic.edge.proxy.api.AgentApi;
+import org.springframework.cloud.openfeign.FeignClient;
 
 /**
  * <code>{@link AgentClient}</code>

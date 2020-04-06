@@ -5,51 +5,32 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>edge-proxy</groupId>
-		<artifactId>edge-proxy-parent</artifactId>
+		<artifactId>tests</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>edge-proxy-agent</artifactId>
-	<packaging>jar</packaging>
-
-	<name>edge-proxy-agent</name>
-	<description>A Framework of proxy with Netty for Spring Boot</description>
+	<artifactId>test-base</artifactId>
 	
 	<dependencies>
 		<dependency>
-			<groupId>edge-proxy</groupId>
-			<artifactId>edge-proxy-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.netty</groupId>
-			<artifactId>netty-all</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
 		</dependency>
-		<!-- <dependency>
-		    <groupId>org.springframework.cloud</groupId>
-		    <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
-		</dependency> -->
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock</artifactId>
+			<version>2.21.0</version>
+		</dependency>
 	</dependencies>
 </project>

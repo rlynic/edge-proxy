@@ -83,7 +83,10 @@ public class AgentAutoConfiguration {
 		@Override
 		public void run(ApplicationArguments args) {
 			ChannelEventTrigger.setChannelListeners(channelListeners);
-			agentServer.start();
+
+			Thread thread = new Thread(() -> agentServer.start(), "thread-agent-server");
+//			thread.setDaemon(true);
+			thread.start();
 		}
 
 	}

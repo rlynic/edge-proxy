@@ -13,6 +13,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rlynic.edge.proxy.channel.execution.ScheduleTaskExecutor;
 import com.rlynic.edge.proxy.channel.execution.TaskExecutor;
 import com.rlynic.edge.proxy.channel.properties.TaskProperties;
@@ -128,7 +129,7 @@ public class ChannelAutoConfiguration {
 
 
 	@Bean
-    public ThreadPoolTaskExecutor restTaskCompletedThreadPoolTaskExecutor(TaskProperties taskProperties) {
+    public ThreadPoolTaskExecutor restTaskCompletedThreadPoolTaskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 
         executor.setCorePoolSize(1);
@@ -140,5 +141,10 @@ public class ChannelAutoConfiguration {
 
         return executor;
     }
+
+    @Bean
+    public ObjectMapper objectMapper(){
+		return new ObjectMapper();
+	}
 
 }

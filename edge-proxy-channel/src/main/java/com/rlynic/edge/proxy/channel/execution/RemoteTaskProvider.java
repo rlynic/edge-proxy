@@ -5,18 +5,16 @@
  */
 package com.rlynic.edge.proxy.channel.execution;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rlynic.edge.proxy.channel.client.AgentClient;
+import com.rlynic.edge.proxy.servlet.Request;
+import com.rlynic.edge.proxy.servlet.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.alibaba.fastjson.JSON;
-
-import com.rlynic.edge.proxy.servlet.Request;
-import com.rlynic.edge.proxy.servlet.Response;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <code>{@link RemoteTaskProvider}</code>
@@ -31,6 +29,9 @@ public class RemoteTaskProvider implements TaskProvider {
 	@Autowired
 	private AgentClient agentClient;
 
+	@Autowired
+	private ObjectMapper objectMapper;
+
 	@Override
 	public List<Request> obtain() {
 		try {
@@ -44,7 +45,7 @@ public class RemoteTaskProvider implements TaskProvider {
 					log.info("successfully to obain rest task from agent, task size: {}", requests.size());
 
 			if(log.isDebugEnabled())
-				log.debug("task : '{}'", requests.size(), JSON.toJSONString(requests));
+				log.debug("task : '{}'", requests.size(), objectMapper.writeValueAsString(requests));
 
 			return requests;
 		}catch(Exception e) {
