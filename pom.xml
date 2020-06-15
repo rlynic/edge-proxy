@@ -24,7 +24,7 @@
 		<netty.version>4.1.42.Final</netty.version>
 		<guava.version>20.0</guava.version>
 		<commons-lang3.version>3.7</commons-lang3.version>
-		<commons-collections.version>3.2.1</commons-collections.version>
+		<commons-collections.version>3.2.2</commons-collections.version>
 		<log4j.version>2.9.1</log4j.version>
 		<spring-boot.version>2.2.2.RELEASE</spring-boot.version>
 		<spring-cloud.version>2.2.2.RELEASE</spring-cloud.version>
